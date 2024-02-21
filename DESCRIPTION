@@ -8,3 +8,10 @@ Description: Filters biodiversity records, aggregates records to a target taxono
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
+Imports:
+  dplyr
+  ggplot2
+  ape
+  ggtree
+  stringr
+  gridExtra
