@@ -1,11 +1,10 @@
 Package: rbta
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Functions to support the reproducibility of biodiversity trend analyses
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Martin Wilkes [aut, cre]
+Maintainer: Martin Wilkes <m.wilkes@essex.ac.uk>
+Description: Filters biodiversity records, aggregates records to a target taxonomic rank, and assesses environmental collection bias associated with biodiversity monitoring.
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
