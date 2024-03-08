@@ -2,10 +2,6 @@
 
 rbta provides funcions to support the reproducibility of biodiversity trend analyses by transparently processing biodiversity records.
 
-## Installation
-
-install_github("wilkesma/rbta")
-
 ## Functionality
 
 | Function name  | Description |
