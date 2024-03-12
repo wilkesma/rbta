@@ -1,6 +1,6 @@
 # rbta
 
-rbta provides funcions to support the reproducibility of biodiversity trend analyses by transparently processing biodiversity records.
+rbta provides functions to support the reproducibility of biodiversity trend analyses by transparently processing biodiversity records.
 
 ## Functionality
 
