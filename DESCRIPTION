@@ -2,8 +2,8 @@ Package: rbta
 Type: Package
 Title: Functions to support the reproducibility of biodiversity trend analyses
 Version: 0.1.0
-Author: Martin Wilkes [aut, cre]
-Maintainer: Martin Wilkes <m.wilkes@essex.ac.uk>
+Author: anon.
+Maintainer: anon.
 Description: Filters biodiversity records, aggregates records to a target taxonomic rank, and assesses environmental collection bias associated with biodiversity monitoring.
 License: GPL (>= 3)
 Encoding: UTF-8
