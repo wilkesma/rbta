@@ -33,3 +33,5 @@ aggregateTaxa <- function(rank, mat, info, remove){
   }
   output
 }
+
+                                   
