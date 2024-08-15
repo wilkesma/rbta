@@ -3,10 +3,11 @@
 #' Given a taxonomic classification, plot the number of detections or total abundance recorded at successive taxonomic ranks.
 #'
 #' @param mat a matrix of detections (binary variables), counts or densities with columns corresponding to the row names of info.
-#' @param info a data frame of taxonomic information, with row names corresponding to the column names of mat and columns named kingdom, phylum, class, order, family, genus and species.
+#' @param info a data frame of taxonomic information, with row names corresponding to the column names of mat and columns named phylum, class, order, family, genus and species.
 #' @return A cladogram mapping aggregated biodiversity data across the taxonomic hierarchy.
 
 exploreTaxa <- function(mat, info){
+  colnames(mat)
   x.info <- info[colnames(mat),]
   x.info$records <- colSums(mat)
   
