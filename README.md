@@ -17,7 +17,7 @@ rbta provides functions to support the reproducibility of biodiversity trend ana
 ### Load packages and data
 
 To get started with `rbta`, load required packages and an example
-data set. We use example detetcion-nondetection data on nine nested diatom taxa available in the `rbta` package as `diat_y`. Survey level information accompanying the detection-nondetection data are available as `diat_metadata`. Data on the taxonomic classification of each taxon is availale as `diat_taxa_info`. Example land cover data for the background landscape and the surveyed locations are available as `bg_landcover` and `diat_landcover` respectively.
+data set. We use example detetcion-nondetection data on nine nested diatom taxa available in the `rbta` package as the `y` object. Survey level information accompanying the detection-nondetection data are available as the `meta` object. Data on the taxonomic classification of each taxon is availale as the `info` object. Example land cover data for the background landscape and the surveyed locations are available as the `bg_lcm` and `meta_lcm` objects respectively.
 
 ``` r
 library(rbta)
@@ -28,11 +28,11 @@ library(ggtree)
 library(stringr)
 library(gridExtra)
 
-data(diat_y) #Object name is y
-data(diat_metadata) #Object name is meta
-data(diat_taxa_info) #Object name is info
-data(bg_landcover) #Object name is bg_lcm
-data(diat_landcover) #Object name is meta_lcm
+data(y) #Object name is y
+data(meta) #Object name is meta
+data(info) #Object name is info
+data(bg_lcm) #Object name is bg_lcm
+data(meta_lcm) #Object name is meta_lcm
 ```
 
 ###Data filtering using `filterSites()`
