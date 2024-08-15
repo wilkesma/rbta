@@ -69,7 +69,7 @@ exploreTaxa(y, info)
 
 The function outputs a plot showing the cladogram with node and tip symbols scaled to the value of the response variable.
 
-###Aggregate data to a given rank using `aggregateTaxa()`
+### Aggregate data to a given rank using `aggregateTaxa()`
 
 Given a taxonomic classification and a target rank, for each taxon at the target rank, we can aggregate the data to the target rank and optionally remove samples in which each higher rank taxon was recorded but not the target rank.
 
