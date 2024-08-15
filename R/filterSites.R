@@ -8,7 +8,7 @@
 #' @return A data frame of survey information for sites meeting the threshold sampling frequency. The data frame can be used to subset a matrix of species detection/nondetection or count data
 
 filterSites <- function(df, freq=NA, plot=FALSE){
-  ts.len <- left_join(df, do.call(rbind, lapply(unique(df$site), function(x) data.frame(site=x, n.timesteps=length(unique(df$year[df$site==x]))))))
+  ts.len <- left_join(df, do.call(rbind, lapply(unique(df$site), function(x) data.frame(site=x, n.timesteps=length(unique(df$timestep[df$site==x]))))))
   row.names(ts.len) <- row.names(df)
   if(plot==TRUE | is.na(freq)){
     p <- ggplot(ts.len, aes(x=n.timesteps)) +
