@@ -25,3 +25,4 @@ filterSites <- function(df, freq=NA, plot=FALSE){
   }
   return(ts.len[ts.len$n.timesteps>=freq, -which(colnames(ts.len)=="n.timesteps")])
 }
+                                                
