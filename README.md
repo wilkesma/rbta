@@ -35,7 +35,7 @@ data(bg_lcm)
 data(meta_lcm)
 ```
 
-###Data filtering using `filterSites()`
+### Data filtering using `filterSites()`
 
 Below we apply a sampling frequency filter to `meta` based on the number of timesteps at which each site has been surveyed. If we provide a pre-defined frequency to filter with, we can optionally output a plot of the empirical cumulative distribution function.
 
@@ -47,7 +47,7 @@ filterSites(meta, 5, TRUE) #For a pre-defined frequency filter including the ecd
 
 The function returns a data frame of survey information for sites meeting the threshold sampling frequency.
 
-###Assessing collection bias using `collectionBias()`
+### Assessing collection bias using `collectionBias()`
 
 Given data frames of environmental data in the backrgound landscape and at surveyed locations, we can use a two-sample, two-sided Kolmogorov-Smirnov test to quantify the collection bias. We can optionally return a plot comntrasting the probability density functions of the two distributions.
 
@@ -59,7 +59,7 @@ sapply(colnames(bg_lcm), function(x) collectionBias(bg_lcm, meta_lcm, x)) #For m
 
 The function returns a data frame of results from a two-sample, two-sided Kolmogorov-Smirnov test. Higher values of the test statistic (D) indicate greater collection bias.
 
-###Explore the taxonomic structure of the data using `exploreTaxa()`
+### Explore the taxonomic structure of the data using `exploreTaxa()`
 
 Given a taxonomic classification, we can plot the number of detections and/or total abundance recorded at successive taxonomic ranks.
 
@@ -80,7 +80,7 @@ aggregateTaxa("genus", y, info, TRUE) #With sample removal
 
 The function returns a matrix of detections (binary variables), counts or densities aggregated to the target rank. If remove=TRUE, NA values will be given to the samples in which higher rank taxa were recorded but not the target rank.
 
-###Use a combination of functions to prepare data with `prepareData()`
+### Use a combination of functions to prepare data with `prepareData()`
 
 We combine the above functions into a single function prompting user inputs to decide sampling frequency filter and target rank informed by outputted graphics, including optional plotting of environmental collection bias at specified sampling frequency thresholds
 
