@@ -61,7 +61,7 @@ The function returns a data frame of results from a two-sample, two-sided Kolmog
 
 ### Explore the taxonomic structure of the data using `exploreTaxa()`
 
-Given a taxonomic classification, we can plot the number of detections and/or total abundance recorded at successive taxonomic ranks.
+Given a taxonomic classification, we can plot the number of detections recorded at successive taxonomic ranks. If the data in `y` are counts, biomass or density (individuals per uint area), the plot will summarise the totals of the corresponding response variable.
 
 ``` r
 exploreTaxa(y, info)
