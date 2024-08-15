@@ -90,9 +90,9 @@ prepareData(df=meta, bg=bg_lcm, points=meta_lcm, vars=colnames(bg_lcm), mat=y, i
 ```
 
 The function returns a list comprised of A list comprised of:
-#' \describe{
-#'   \item{\code{df}}{a data frame of survey information for sites meeting the threshold sampling frequency. The data frame can be used to subset a matrix of species detection/nondetection or count data.}
-#'   \item{\code{mat}}{a matrix of detections (binary variables), counts or densities aggregated to the target rank for sites meeting the threshold sampling frequency. If remove=TRUE, NA values will be given to the samples in which higher rank taxa were recorded but not the target rank.}
-#'   \item{\code{bias}}{a data frame of results from a two-sample, two-sided Kolmogorov-Smirnov test. Higher values of the test statistics (D) indicate greater collection bias.}
-#'   \item{\code{bias.taxon}}{a data frame of results from a two-sample, two-sided Kolmogorov-Smirnov test per taxon. Higher values of the test statistics (D) indicate greater collection bias. NULL if remove=FALSE.}
-
+| Name  | Description |
+| ------------- | ------------- |
+| df  | A data frame of survey information for sites meeting the threshold sampling frequency. The data frame can be used to subset a matrix of species detection/nondetection or count data.|
+| mat  | A matrix of detections (binary variables), counts or densities aggregated to the target rank for sites meeting the threshold sampling frequency. If remove=TRUE, NA values will be given to the samples in which higher rank taxa were recorded but not the target rank.|
+| bias  | A data frame of results from a two-sample, two-sided Kolmogorov-Smirnov test. Higher values of the test statistics (D) indicate greater collection bias.|
+| bias.taxon  | A data frame of results from a two-sample, two-sided Kolmogorov-Smirnov test per taxon. Higher values of the test statistics (D) indicate greater collection bias. NULL if remove=FALSE.|
