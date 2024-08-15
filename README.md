@@ -17,7 +17,7 @@ rbta provides functions to support the reproducibility of biodiversity trend ana
 ### Load packages and data
 
 To get started with `rbta`, load required packages and an example
-data set. We use example detetcion-nondetection data on nine nested diatom taxa available in the `rbta` package as the `y` object. Survey level information accompanying the detection-nondetection data are available as the `meta` object. Data on the taxonomic classification of each taxon is availale as the `info` object. Example land cover data for the background landscape and the surveyed locations are available as the `bg_lcm` and `meta_lcm` objects respectively.
+data set. We use example detection-nondetection data on nine nested diatom taxa available in the `rbta` package as the `y` object. Survey level information accompanying the detection-nondetection data are available as the `meta` object. Data on the taxonomic classification of each taxon is availale as the `info` object. Example land cover data for the background landscape and the surveyed locations are available as the `bg_lcm` and `meta_lcm` objects respectively.
 
 ``` r
 library(rbta)
