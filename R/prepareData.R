@@ -2,9 +2,9 @@
 #'
 #' Combines available rbta functions into a single function prompting user inputs to decide sampling frequency filter and target rank informed by outputted graphics, including plotting of environmental collection bias at specified sampling frequency thresholds
 #'
-#' @param df a dataframe of survey information with at least two columns named timestep and site. The row names of meta must match the row names of mat.
+#' @param df a dataframe of survey information with at least two columns named timestep and site. The row names of meta (unique sample id) must match the row names of mat.
 #' @param bg a data frame of background environmental data with columns corresponding to environmental variables.
-#' @param points a data frame of environmental data at sampling locations, with columns corresponding to environmental variables.
+#' @param points a data frame of environmental data at sampling locations, with columns corresponding to environmental variables. Must have row.names identical to mat.
 #' @param vars a vector of environmental variable name(s) to be assessed for collection bias. Must be column names in both bg and points.
 #' @param mat a matrix of detections (binary variables), counts or densities with columns corresponding to the row names of info. The row names of mat must match the row names of df.
 #' @param info a data frame of taxonomic information, with row names corresponding to the column names of mat and columns named kingdom, phylum, class, order, family, genus and species.
@@ -21,7 +21,8 @@
 prepareData <- function(df, bg, points, vars, mat, info, freq=NA, rank=NA, remove=NA){
   x.meta <- filterSites(df, freq)
   x.mat <- mat[row.names(x.meta),]
-  x.bias <- lapply(vars, function(x) collectionBias(bg, x.meta, x, TRUE))
+  x.points <- points[row.names(x.mat),]
+  x.bias <- lapply(vars, function(x) collectionBias(bg, x.points, x, TRUE))
   grid.arrange(grobs=lapply(x.bias, function(x) x$p))
   x.bias <- do.call(rbind, lapply(x.bias, function(x) x$result))
   exploreTaxa(x.mat, info)
@@ -37,7 +38,7 @@ prepareData <- function(df, bg, points, vars, mat, info, freq=NA, rank=NA, remov
   if(remove==TRUE){
     message("Percentage of records removed per target taxon:")
     print(apply(x.mat, 2, function(x) length(x[is.na(x)])/length(x)*100))
-    x.bias.2 <- do.call(rbind, lapply(vars, function(x) do.call(rbind, lapply(colnames(x.mat), function(y) data.frame(taxon=y, collectionBias(bg, x.meta[which(row.names(x.meta) %in% names(x.mat[,y][!is.na(x.mat[,y])])),], x, FALSE))))))
+    x.bias.2 <- do.call(rbind, lapply(vars, function(x) do.call(rbind, lapply(colnames(x.mat), function(y) data.frame(taxon=y, collectionBias(bg, x.points[which(row.names(x.points) %in% names(x.mat[,y][!is.na(x.mat[,y])])),], x, FALSE))))))
   } else{
     x.bias.2 <- NULL
   }
