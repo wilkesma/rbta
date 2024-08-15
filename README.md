@@ -28,11 +28,11 @@ library(ggtree)
 library(stringr)
 library(gridExtra)
 
-data(y) #Object name is y
-data(meta) #Object name is meta
-data(info) #Object name is info
-data(bg_lcm) #Object name is bg_lcm
-data(meta_lcm) #Object name is meta_lcm
+data(y)
+data(meta)
+data(info)
+data(bg_lcm)
+data(meta_lcm)
 ```
 
 ###Data filtering using `filterSites()`
